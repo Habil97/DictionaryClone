@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+    ViewBag.Title = "WriterUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+@*Yazar Güncelleme Sayfası*@
+<br />
+<div class="col text-center">
+    <h4>YAZARI GÜNCELLE</h4>
+</div>
+@using (Html.BeginForm("WriterUpdate", "Writer", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.WriterID, new { @class = "form-control" })
+    <br /> <hr />
+    @Html.Label("AD-SOYAD")
+    @Html.TextBoxFor(x => x.WriterUser, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterUser)
+    <br /> <hr />
+    @Html.Label("MAİL")
+    @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterMail)
+    <br /> <hr />
+    @Html.Label("GÖRSEL")
+    @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+    <br /> <hr />
+    @Html.Label("UNVAN")
+    @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterTitle)
+    <br /> <hr />
+    @Html.Label("ADRES")
+    @Html.TextBoxFor(x => x.WriterAdress, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterAdress)
+    <br /> <hr />
+    @Html.Label("HAKKIMDA")
+    @Html.TextAreaFor(x => x.WriterAbout, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterAbout)
+    <br /> <hr />
+    <div class="col text-center">
+        <button class="btn btn-primary">DEĞİŞİKLİKLERİ UYGULA</button>
+    </div>
+</div>
+}
+

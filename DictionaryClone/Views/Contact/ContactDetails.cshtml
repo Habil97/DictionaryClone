@@ -1,0 +1,92 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewBag.Title = "ContactDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Mailbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/DictionaryTheme/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/DictionaryTheme/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="~/DictionaryTheme/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link href="~/DictionaryTheme/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/DictionaryTheme/assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <link href="~/DictionaryTheme/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="row">
+            @Html.Action("MessageListMenu", "Contact")
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="text-center" style="font-size:16px">Mesaj Detayları</h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="mailbox-read-info">
+                            <h5 style="font-size:18px; font-family:Roboto;font-weight:bold">Konu : <a style="font-size:18px;font-family:Roboto;font-weight:400">@Html.DisplayFor(x => x.Subject)</a> </h5>
+                            <br />
+                            <h6 style="font-size: 14px; font-family: Roboto; font-weight: bold">
+                                Gönderen : <a style="font-size: 14px; font-family: Roboto; font-weight: 400">@Html.DisplayFor(x => x.Usermail)</a>
+                                           <span class="mailbox-read-time float-right">@DateTime.Parse(@Html.DisplayFor(x => x.ContactDate).ToString()).ToShortDateString()</span>
+                            </h6>
+                        </div>
+                        <div class="mailbox-read-message">
+                            <p style="font-size: 16px; font-family: Roboto; color: red">@Html.DisplayFor(x => x.Message) </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="~/DictionaryTheme/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/DictionaryTheme/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/DictionaryTheme/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <script src="~/DictionaryTheme/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/DictionaryTheme/assets/js/core/jquery.3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.checkbox-toggle').click(function () {
+                var clicks = $(this).data('clicks')
+                if (clicks) {
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                    $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+                } else {
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                    $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+                }
+                $(this).data('clicks', !clicks)
+            })
+
+            $('.mailbox-star').click(function (e) {
+                e.preventDefault()
+                var $this = $(this).find('a > i')
+                var glyph = $this.hasClass('glyphicon')
+                var fa = $this.hasClass('fa')
+
+                if (glyph) {
+                    $this.toggleClass('glyphicon-star')
+                    $this.toggleClass('glyphicon-star-empty')
+                }
+
+                if (fa) {
+                    $this.toggleClass('fa-star')
+                    $this.toggleClass('fa-star-o')
+                }
+            })
+        })
+    </script>
+
+    <script src="~/DictionaryTheme/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>

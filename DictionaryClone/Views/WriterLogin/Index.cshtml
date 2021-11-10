@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>YAZAR GİRİŞİ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/DictionaryTheme/Login_Writer/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/vendor/animate/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/vendor/select2/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/DictionaryTheme/Login_Writer/css/util.css" rel="stylesheet" />
+    <link href="~/DictionaryTheme/Login_Writer/css/main.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+                @using (Html.BeginForm("Index", "WriterLogin", FormMethod.Post))
+                {
+                    <span class="login100-form-title p-b-55">
+                        Giriş Yap
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="WriterMail" placeholder="Mail">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-envelope"></span>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                        <input class="input100" type="password" name="WriterPassword" placeholder="Şifre">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-lock"></span>
+                        </span>
+                    </div>
+                    <div class="container-login100-form-btn p-t-25">
+                        <button class="login100-form-btn">
+                            GİRİŞ YAP
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!--===============================================================================================-->
+    <script src="~/DictionaryTheme/Login_Writer/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/DictionaryTheme/Login_Writer/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/DictionaryTheme/Login_Writer/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/DictionaryTheme/Login_Writer/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/DictionaryTheme/Login_Writer/js/main.js"></script>
+
+</body>
+</html>

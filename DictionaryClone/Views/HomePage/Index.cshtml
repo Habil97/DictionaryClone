@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="~/DictionaryTheme/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/DictionaryTheme/assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <link href="~/DictionaryTheme/assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container bootstrap snippets bootdey">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col text-center">
+                            <hr />
+                            @foreach (var item in Model)
+                            {
+                                <div style="background-color:beige" class="alert alert-primary">
+                                    <span>
+                                        <b style="font-family:Arial; font-size:18px;font-weight:bold;">@item.Heading.HeadingName <hr /> </b>
+                                        <b style="font-family:Arial; font-size:14px; color:black">@item.ContentText </b> <hr />
+                                        <b style="margin-right:-900px; color:black">@item.ContentDate.ToShortDateString()</b>
+                                        <b style="margin-right:-50px; color:red">@item.Writer.WriterUser</b>
+                                    </span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+
+</html>
+
